@@ -7,6 +7,7 @@ import java.util.List;
 
 public class Main {
     //::
+    //x -> x.foo() ----->  FooClass::foo
     public static  void main(String[] a){
         List<String> items = new ArrayList<>(){{add("A");add("B");add("C");}};
 

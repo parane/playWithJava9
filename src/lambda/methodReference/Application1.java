@@ -4,10 +4,18 @@ public class Application1 {
     //we need to operate add, substract, etc operation send as param
 
 
+    public static  int add(int a, int b){
+        return a+b;
+    }
+
+
+
     public void testing(){
         System.out.println("-------APP1: DYNAMIC OPS------");
-        MathOperation add = (int a, int b) -> {return a+b;};
-        MathOperation subtract = (a, b) -> {return (a-b);};
+        Subtract subtract1=new Subtract();
+
+        MathOperation add = Application1::add;  //(a, b) -> {return (a+b);}
+        MathOperation subtract = subtract1::doSubtract;//FooClass::foo -> subtract1.doSubtract(a,b);
         MathOperation multiply = (a, b) -> a*b;
 
         DynamicOperationWithStaticMethod dynamicOperation = new DynamicOperationWithStaticMethod();
@@ -26,7 +34,13 @@ interface MathOperation{
 
 class DynamicOperationWithStaticMethod{
 
-    public static int dynamicOp(int a,int b, MathOperation mathOperation){
+    public  int dynamicOp(int a,int b, MathOperation mathOperation){
         return mathOperation.operate(a,b);
+    }
+}
+
+class Subtract {
+    public   int doSubtract(int a, int b){
+        return a-b;
     }
 }
