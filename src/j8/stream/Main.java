@@ -24,6 +24,7 @@ public class Main {
         System.out.println(sequentialStream
                 .filter(i -> i<3)
                 .map(i->i*2)
+
                /* .forEach(System.out::println)*/
                 .reduce(0,(sum,i)->sum+i));
 
