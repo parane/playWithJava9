@@ -15,5 +15,9 @@ public interface Sim {
         System.out.println("This is for interface usages,not for override ");
     }
 
-    //java 9 --> private method also support
+    //java 9 --> private method also support for reusable component go here
+    private int helper(){
+        return 1;
+    }
+
 }

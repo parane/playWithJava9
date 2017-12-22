@@ -74,9 +74,9 @@ public class Main {
 
         System.out.println();
         Stream.iterate(100,i->i+1)
-                .filter(e->{System.out.println("GR3 "+e);return e>3;})
-                .filter(e->{System.out.println("EVN "+e);return e%2==0;})
-                .map(e->{System.out.println("DOU  "+e);return e*2;})
+                .filter(e->{return e>3;})
+                .filter(e->{return e%2==0;})
+                .map(e->{return e*2;})
                 .limit(10)
                 .forEach(System.out::println);
 
